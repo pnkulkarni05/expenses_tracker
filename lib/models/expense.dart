@@ -7,13 +7,13 @@ enum Category { food, travel, leisure, work }
 class Expense {
   Expense({
     required this.amount,
-    required this.expense,
+    required this.title,
     required this.date,
     required this.category,
   }) : id = uuid.v4();
   final String id;
   final double amount;
-  final String expense;
+  final String title;
   final DateTime date;
   final Category category;
 }
