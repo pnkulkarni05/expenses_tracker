@@ -11,6 +11,6 @@ class Expenses extends StatefulWidget {
 class _ExpensesState extends State<Expenses> {
   @override
   Widget build(BuildContext context) {
-    return const Text("Expense Tracker");
+    return const Text("Expenses Tracker");
   }
 }
