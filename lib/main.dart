@@ -3,8 +3,20 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp(
-      home: Scaffold(body: Expenses()),
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Expense Tracker'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () {},
+            ),
+          ],
+        ),
+        body: const Expenses(),
+      ),
     ),
   );
 }
