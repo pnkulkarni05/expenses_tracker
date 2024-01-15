@@ -26,9 +26,12 @@ class ExpenseItem extends StatelessWidget {
               const Spacer(), // This widget takes all the available space between the two widgets. In this case it takes space between the Text widget above the spacer and the Row widget below the spacer.
               Row(
                 children: [
-                  const Icon(Icons.car_repair),
+                  Icon(categoryIcons[expense.category]),
+                  const SizedBox(
+                    width: 8,
+                  ),
                   Text(
-                    expense.date.toString(),
+                    expense.formattedDate,
                   ),
                 ],
               )
