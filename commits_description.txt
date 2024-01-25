@@ -25,7 +25,7 @@ Worked on ecpense_item.dart file. Created dynamic icons for each category using 
 Learned about get keyword while writing function for formattedDate.
 
 Commit 8:
-Write a function for displaying bottomModelSheet after clicking on the icon in the appbar.
+Wrote a function for displaying bottomModelSheet after clicking on the icon in the appbar.
 Learned the concept of "context" argument.
 We get a context automatically as a input to build method. It is passed to build method by flutter.
 If our inner class extends a state then flutter automatically add a context property to the class,
@@ -35,5 +35,9 @@ This context property made available by flutter can be used in showModelBottomSh
 IMPORTANT:
 What is context => Context is basically an object full of metadata managed by flutter that belongs to the specific widget.
 So every widget has its specific context and that contains metadata information related to the widget and the widget's position in the overall user interface.
+
+Commit 9:
+Started with creating a widget that will be display after clicking on the add icon in the appbar.
+Used the TextField() widget for accepting the input from user in the text format. 
 
 
