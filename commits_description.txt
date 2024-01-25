@@ -1,0 +1,39 @@
+This file contains the description of all the work done and new concepts learned before each commit.
+
+Commit 1:
+Started with expense tracker
+
+Commit 2:
+Created expense class to store info realted to expenses. Used uuid package for generating unique id for each expense.
+
+Commit 3:
+Added a list of categories for the expenses in expense.dart using enum.
+
+Commit 4:
+Added dummy expenses.
+
+Commit 5:
+Created a seperate widget- ExpensesList() for showing expenses.
+
+Commit 6:
+Organized code by creating relavant folders. 
+Created a ExpenseItem widget for displaying the data of single transaction appropriately in the card widget. 
+Learn about new widget Spacer().
+
+Commit 7:
+Worked on ecpense_item.dart file. Created dynamic icons for each category using map. Also formatted date using DateFormat class from intl package. 
+Learned about get keyword while writing function for formattedDate.
+
+Commit 8:
+Write a function for displaying bottomModelSheet after clicking on the icon in the appbar.
+Learned the concept of "context" argument.
+We get a context automatically as a input to build method. It is passed to build method by flutter.
+If our inner class extends a state then flutter automatically add a context property to the class,
+more specifically this property is provided by the state parent class.
+This context property made available by flutter can be used in showModelBottomSheet() method.
+
+IMPORTANT:
+What is context => Context is basically an object full of metadata managed by flutter that belongs to the specific widget.
+So every widget has its specific context and that contains metadata information related to the widget and the widget's position in the overall user interface.
+
+

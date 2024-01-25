@@ -8,6 +8,7 @@ class ExpenseItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var amt = expense.amount;
     return Card(
       child: Column(
         children: [
@@ -21,9 +22,13 @@ class ExpenseItem extends StatelessWidget {
           Row(
             children: [
               Text(
-                expense.amount.toStringAsFixed(2),
+                ('\$ $amt'),
               ),
-              const Spacer(), // This widget takes all the available space between the two widgets. In this case it takes space between the Text widget above the spacer and the Row widget below the spacer.
+              const Spacer(),
+
+              /* This Spacer widget takes all the available space between the two widgets.
+              In this case it takes space between the Text widget above the spacer and the Row widget below the spacer.*/
+
               Row(
                 children: [
                   Icon(categoryIcons[expense.category]),
