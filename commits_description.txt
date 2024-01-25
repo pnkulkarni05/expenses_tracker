@@ -40,4 +40,8 @@ Commit 9:
 Started with creating a widget that will be display after clicking on the add icon in the appbar.
 Used the TextField() widget for accepting the input from user in the text format. 
 
+Commit 10:
+Wrote the code for getting user input for every keystroke. Also added a elevated button for adding expense in the bottomModelSheet.
+Used onChanged parameter of TextField for getting input from keyboard.
+
 
