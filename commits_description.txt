@@ -100,4 +100,9 @@ It's called automatically by flutter when the widget and its state are about to 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Commit 12:
+Added another TextField and textEditingController for getting amount of expense from user.
+Used a parameter "prefix" of inputdecoration field to add a $ sign in front of amount when user try to enter any amount.
 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------

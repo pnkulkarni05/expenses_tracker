@@ -19,10 +19,12 @@ class _NewExpenseState extends State<NewExpense> {
   //Approach 2 for storing the input written by user in the textfield using controller.
 
   final _inputController = TextEditingController();
+  final _valueController = TextEditingController();
 
   @override
   void dispose() {
     _inputController.dispose();
+    _valueController.dispose();
     super.dispose();
   }
 
@@ -39,11 +41,32 @@ class _NewExpenseState extends State<NewExpense> {
               label: Text("Title"),
             ),
           ),
-          ElevatedButton(
-              onPressed: () {
-                print(_inputController.text);
-              },
-              child: const Text("Add Expense")),
+          TextField(
+            keyboardType: TextInputType.number,
+            controller: _valueController,
+            maxLength: 6,
+            decoration: const InputDecoration(
+              label: Text("Amount"),
+              prefix: Text("\$ "),
+            ),
+          ),
+          Row(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  print(_inputController.text);
+                  print(_valueController.text);
+                },
+                child: const Text("Add Expense"),
+              ),
+              TextButton(
+                onPressed: () {
+                  print("Expense cancelled");
+                },
+                child: const Text("Cancel"),
+              )
+            ],
+          ),
         ],
       ),
     );
