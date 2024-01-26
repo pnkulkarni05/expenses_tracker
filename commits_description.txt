@@ -1,28 +1,43 @@
 This file contains the description of all the work done and new concepts learned before each commit.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Commit 1:
 Started with expense tracker
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Commit 2:
 Created expense class to store info realted to expenses. Used uuid package for generating unique id for each expense.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Commit 3:
 Added a list of categories for the expenses in expense.dart using enum.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Commit 4:
 Added dummy expenses.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Commit 5:
 Created a seperate widget- ExpensesList() for showing expenses.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Commit 6:
 Organized code by creating relavant folders. 
 Created a ExpenseItem widget for displaying the data of single transaction appropriately in the card widget. 
 Learn about new widget Spacer().
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Commit 7:
 Worked on ecpense_item.dart file. Created dynamic icons for each category using map. Also formatted date using DateFormat class from intl package. 
 Learned about get keyword while writing function for formattedDate.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Commit 8:
 Wrote a function for displaying bottomModelSheet after clicking on the icon in the appbar.
@@ -36,12 +51,53 @@ IMPORTANT:
 What is context => Context is basically an object full of metadata managed by flutter that belongs to the specific widget.
 So every widget has its specific context and that contains metadata information related to the widget and the widget's position in the overall user interface.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Commit 9:
 Started with creating a widget that will be display after clicking on the add icon in the appbar.
 Used the TextField() widget for accepting the input from user in the text format. 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Commit 10:
 Wrote the code for getting user input for every keystroke. Also added a elevated button for adding expense in the bottomModelSheet.
 Used onChanged parameter of TextField for getting input from keyboard.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 11:
+In the previous commit we decleared avariable and stored the string written by user in the text field in that variable. We wrote the code like this,
+var _inputTitle;
+  void _getExpenseTitle(String title) {
+    _inputTitle = title;
+  }
+
+But for this, we have a better approach of using controller instead of using any variable and method for storing string in that variable.
+We can make use of textEditingController class. First we will create an object of this class
+and then we can pass that object to text field to let flutter do all the heavy lifting of storing the entered value.
+
+
+Code for this will be like =>
+final _inputController = TextEditingController();
+
+  @override
+  void dispose() {
+    _inputController.dispose();
+    super.dispose();
+  }
+
+
+Important Notes:
+- While using textEditingController there is 1 important thing to keep in mind is that when we create a textEditingController we also have to tell flutter
+to delete that controller when the widget is not nedded any more i.e. in this case when the model overlay is closed.
+Otherwise this textEditingController will kept in memory even though it no loger needed.
+
+- Thats why while using textEditingController we have to add special dispose() method to state class.
+"dispose", like "initstate" and "build", is a part of statefulwidget's lifecycle.
+It's called automatically by flutter when the widget and its state are about to destoryed (removed from the UI).
+
+- only "State" classes can implement "dispose" method thats why we have used statefulwidget here.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
