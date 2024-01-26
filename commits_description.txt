@@ -106,3 +106,7 @@ Used a parameter "prefix" of inputdecoration field to add a $ sign in front of a
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 13:
+Added functionality to move back to previous screen on pressing the cancel button.
+Used Navigator class for moving one screen back. The code is like, Navigator.pop(context);
