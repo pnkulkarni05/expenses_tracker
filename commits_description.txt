@@ -131,3 +131,46 @@ i.e. the past date upto which user can add expense and lastDate i.e. today's dat
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 15:
+
+Worked with future to handle data from futures.
+The inbuilt function showDatePicker will return a date but it is wrapped inside a future.
+Future is an important datattype in dart which is basically an object that wrapes the value which you don't have yet but will have in future. 
+In our case we want a variable which stores a selected date by user from the calender.
+For this we can create an object and store the date but the problem here is that the date selected by user will not be available immediately but after some time.
+So while declearing such variable it not possible because it will cause an error as it doesn't got the value we will specify in that variable immediately.
+
+So for running code smoothly and since the showDatePicker wrapes the date with future we have to modify our code accordingly.
+ We will modify the code as,
+
+ void _presentDatePicker() async {
+    final now = DateTime.now();
+    final firstDate = DateTime(now.year - 1, now.month, now.day);
+    final _pickedDate = await showDatePicker(
+        context: context, firstDate: firstDate, lastDate: now);
+ }
+
+ We have added the async keyword after the function and we have added the await keyword before the showDatePicker function
+which tells the flutter that the value of this function will not available immediately but will be available after some time.
+ And due to this we can now declare the variable which stores the selectedDate by user and it will not cause any error.
+
+ Now we have stored the date picked by user in _pickedDate variable but even though if we try to get it it will not be displyed.
+ It is because when we execute the code the build method in that widget will run once but after selecting the date we need to change the UI
+ and for this we have to run build method once angin with the updated change.
+ For this purpose we have to call the setState() method which will run build method again and 
+ inside that build method we have to write code which we is going to chnage the UI.
+ In our case for this, first we have created a _selectedDate variable of type DateTime and in the setState() method we assigned the selectedDate value as the _pickedDate. 
+ the setState() will run the build method once again and assign the value in _selectedDate as the _pickedDate.
+
+ 
+    setState(() {
+      _selectedDate = _pickedDate;
+    });
+
+
+Now for dispalying the date we will use a ternery operator and format class of intl package which we also used in the past while writing the formattedDate function in expense.dart file.
+
+Text(_selectedDate == null ? "No date selected": format.format(_selectedDate!)),
+
+One thing to note in the above line is we have used the "!" after _selectedDate to tell flutter that we know that the _selectedDate will not be null.
