@@ -110,3 +110,24 @@ Used a parameter "prefix" of inputdecoration field to add a $ sign in front of a
 Commit 13:
 Added functionality to move back to previous screen on pressing the cancel button.
 Used Navigator class for moving one screen back. The code is like, Navigator.pop(context);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 14:
+Added a datepicker for selecting date for the expense. Used the DateTime class for setting the calender in which set a date from specific duration,
+Here we have set the past date as date 1 year before of today and last date as the today's date because the date of expense can't be future date.
+
+void _presentDatePicker() {
+    final now = DateTime.now();
+    final firstDate = DateTime(now.year - 1, now.month, now.day);
+    showDatePicker(context: context, firstDate: firstDate, lastDate: now);
+  }
+
+In above code we have created a method _presentDatePicker which will be passes to the opressesd paramenter of IconButton.
+In the above method first we have created a object now of DateTime class. Now using that now object we have accessed the current year, month and date.
+After that using the showDatePicker inbuilt function we set the firstdate
+i.e. the past date upto which user can add expense and lastDate i.e. today's date as user can't add future expense today.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
