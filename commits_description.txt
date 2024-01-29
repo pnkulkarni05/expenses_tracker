@@ -227,6 +227,13 @@ As a result, the selected category will be displayed to the user.
 Commit 16:
 Added a code for checking is all the fields are filled before adding the expense.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 17:
+Added a alert dialog box for checking the input is valid or not.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 

@@ -48,7 +48,20 @@ class _NewExpenseState extends State<NewExpense> {
     if (isInvalidAmount ||
         _inputController.text.trim().isEmpty ||
         _selectedDate == null) {
-      print("Please fill all the fields properly");
+      showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+                content: const Text(
+                    "Make Sure that you have filled the valid input in title,amount and selected date."),
+                title: const Text('Invalid Input'),
+                actions: [
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(ctx);
+                      },
+                      child: const Text("Okay"))
+                ],
+              ));
     }
   }
 
