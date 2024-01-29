@@ -11,6 +11,7 @@ class NewExpense extends StatefulWidget {
 
 class _NewExpenseState extends State<NewExpense> {
   DateTime? _selectedDate;
+  Category _selectedCategory = Category.food;
   //Approach 1 for storing the input written by user in the textfield.
 
   /* var _inputTitle;
@@ -33,11 +34,11 @@ class _NewExpenseState extends State<NewExpense> {
   void _presentDatePicker() async {
     final now = DateTime.now();
     final firstDate = DateTime(now.year - 1, now.month, now.day);
-    final _pickedDate = await showDatePicker(
+    final pickedDate = await showDatePicker(
         context: context, firstDate: firstDate, lastDate: now);
 
     setState(() {
-      _selectedDate = _pickedDate;
+      _selectedDate = pickedDate;
     });
   }
 
@@ -86,6 +87,21 @@ class _NewExpenseState extends State<NewExpense> {
           ),
           Row(
             children: [
+              DropdownButton(
+                  value: _selectedCategory,
+                  items: Category.values
+                      .map(
+                        (category) => DropdownMenuItem(
+                          value: category,
+                          child: Text(category.name.toUpperCase()),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedCategory = value!;
+                    });
+                  }),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);

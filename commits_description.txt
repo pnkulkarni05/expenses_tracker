@@ -66,7 +66,7 @@ Used onChanged parameter of TextField for getting input from keyboard.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Commit 11:
-In the previous commit we decleared avariable and stored the string written by user in the text field in that variable. We wrote the code like this,
+In the previous commit we decleared a variable and stored the string written by user in the text field in that variable. We wrote the code like this,
 var _inputTitle;
   void _getExpenseTitle(String title) {
     _inputTitle = title;
@@ -174,3 +174,58 @@ Now for dispalying the date we will use a ternery operator and format class of i
 Text(_selectedDate == null ? "No date selected": format.format(_selectedDate!)),
 
 One thing to note in the above line is we have used the "!" after _selectedDate to tell flutter that we know that the _selectedDate will not be null.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 16:
+
+Worked on the dropdown menu of categories of expenses while adding new Expense.
+
+ DropdownButton(
+                  value: _selectedCategory,
+                  items: Category.values
+                      .map(
+                        (category) => DropdownMenuItem(
+                          value: category,
+                          child: Text(category.name.toUpperCase()),
+                        ),
+                      )
+                      .toList(),
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedCategory = value!;
+                    });
+                  }),
+
+
+Added another child, "DropdownButton," which takes two named arguments: items and onChanged.
+The items argument requires a list of items of type DropdownMenuItem, and onChanged takes a function with a single argument to represent each item in the list.
+
+For providing the list to the items argument, we have used the Category enum created in the past. 
+From this Category enum, we can access the values defined in it, such as amount, title, date, etc. 
+Additionally, we can access another property called "values," which gives the list of categories (i.e., Category.values gives a list of categories of type Category).
+
+To convert the type of the list from Category to DropdownMenuItem, we utilized the map function. 
+This function automatically executes a specified function for every list item. In the code, the word "category" inside the map function acts as an iterable object, and Dart assigns values to it. 
+This mechanism is similar to a for loop, where the function executes for each item, and the current item is represented by the "category" keyword.
+
+The map function changes the type of items from Category to DropdownMenuItem. 
+Although it is iterable and not of type list, we convert it into a list using the .toList() method.
+
+The onChanged() function alters the category if the user selects any category from the dropdown menu. 
+The onChanged function takes the value selected by the user from the dropdown menu. To store the selected value, we created a variable _selectedCategory and initialized it with the category of "food."
+
+The DropdownButton takes one more argument called value, determining which item should be displayed to the user on the screen. 
+Initially, we assigned the value as _selectedCategory, so when the app runs for the first time, the selected value will be "food." 
+If the user changes the value from the dropdown menu, it will be updated. When the user selects any category, the onChanged function is called by default. 
+Inside the onChanged function, we used the setState method to assign the new value to _selectedCategory and rerun the build method. 
+As a result, the selected category will be displayed to the user.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
