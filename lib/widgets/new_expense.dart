@@ -42,6 +42,16 @@ class _NewExpenseState extends State<NewExpense> {
     });
   }
 
+  void _submitExpenseData() {
+    final enteredAmount = double.tryParse(_valueController.text);
+    bool isInvalidAmount = enteredAmount == 0 || enteredAmount == null;
+    if (isInvalidAmount ||
+        _inputController.text.trim().isEmpty ||
+        _selectedDate == null) {
+      print("Please fill all the fields properly");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -85,6 +95,9 @@ class _NewExpenseState extends State<NewExpense> {
               )
             ],
           ),
+          const SizedBox(
+            height: 16,
+          ),
           Row(
             children: [
               DropdownButton(
@@ -102,6 +115,7 @@ class _NewExpenseState extends State<NewExpense> {
                       _selectedCategory = value!;
                     });
                   }),
+              const Spacer(),
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -109,10 +123,7 @@ class _NewExpenseState extends State<NewExpense> {
                 child: const Text("Cancel"),
               ),
               ElevatedButton(
-                onPressed: () {
-                  print(_inputController.text);
-                  print(_valueController.text);
-                },
+                onPressed: _submitExpenseData,
                 child: const Text("Add Expense"),
               ),
             ],

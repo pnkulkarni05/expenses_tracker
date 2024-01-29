@@ -224,7 +224,8 @@ As a result, the selected category will be displayed to the user.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+Commit 16:
+Added a code for checking is all the fields are filled before adding the expense.
 
 
 
