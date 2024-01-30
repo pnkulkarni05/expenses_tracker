@@ -40,8 +40,15 @@ class _ExpensesState extends State<Expenses> {
     Navigator.pop(context);
   }
 
+  void _removeExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.remove(expense);
+    });
+  }
+
   void _openAddExpenseOverlay() {
     showModalBottomSheet(
+      isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     );
@@ -60,7 +67,8 @@ class _ExpensesState extends State<Expenses> {
         children: [
           const Text("List of expenses"),
           Expanded(
-            child: ExpensesList(myList: _registeredExpenses),
+            child: ExpensesList(
+                myList: _registeredExpenses, onRemoveExpense: _removeExpense),
           ),
         ],
       ),
