@@ -22,13 +22,6 @@ void main() {
             backgroundColor: kDarkTheme.primaryContainer,
           ),
         ),
-        textTheme: ThemeData().textTheme.copyWith(
-              titleLarge: TextStyle(
-                color: kColorScheme.secondaryContainer,
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),
-            ),
       ),
       debugShowCheckedModeBanner: false,
       theme: ThemeData().copyWith(
