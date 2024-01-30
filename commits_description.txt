@@ -245,5 +245,8 @@ Added Functionality to remove expense on swapping it left or right.
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 
+Commit 20:
+Added a functionality to show snackbar after deleteing expense.
+Undo button in snackbar to undo the delete function and also added functionality to show different widget if there are no expenses added by user.
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------
