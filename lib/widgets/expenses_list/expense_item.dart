@@ -14,33 +14,42 @@ class ExpenseItem extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-            child: Text(expense.title),
+            child: Text(
+              expense.title,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
           ),
           const SizedBox(
             height: 4,
           ),
-          Row(
-            children: [
-              Text(
-                ('\$ $amt'),
-              ),
-              const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: Row(
+              children: [
+                Text(
+                  ('\$ ${amt.toStringAsFixed(2)}'),
+                ),
+                const Spacer(),
 
-              /* This Spacer widget takes all the available space between the two widgets.
-              In this case it takes space between the Text widget above the spacer and the Row widget below the spacer.*/
+                /* This Spacer widget takes all the available space between the two widgets.
+                In this case it takes space between the Text widget above the spacer and the Row widget below the spacer.*/
 
-              Row(
-                children: [
-                  Icon(categoryIcons[expense.category]),
-                  const SizedBox(
-                    width: 8,
+                Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child: Row(
+                    children: [
+                      Icon(categoryIcons[expense.category]),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        expense.formattedDate,
+                      ),
+                    ],
                   ),
-                  Text(
-                    expense.formattedDate,
-                  ),
-                ],
-              )
-            ],
+                )
+              ],
+            ),
           )
         ],
       ),
