@@ -276,3 +276,9 @@ Commit 25:
 Added a bar chart which shows the expensese in bar graph according to the category and total expense.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 26:
+Write a code to lock the orientation of app by default using the services package of flutter.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
