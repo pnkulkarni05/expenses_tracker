@@ -291,3 +291,9 @@ Commit 28:
 Worked on the UI of new expense screen for horizontal orientation.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Commit 29:
+Used the useSafeArea feature of showModelBottomSheet to protect the UI from overlapping with device hardware like camera.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
