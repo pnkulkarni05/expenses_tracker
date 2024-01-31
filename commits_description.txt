@@ -297,3 +297,8 @@ Used the useSafeArea feature of showModelBottomSheet to protect the UI from over
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
+Commit 30:
+Used the LayoutBuilder widget and special if else condtitons to adjust the UI in landscape mode of new expense screen.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
